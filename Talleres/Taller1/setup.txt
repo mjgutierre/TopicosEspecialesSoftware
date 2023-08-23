@@ -1,0 +1,13 @@
+						MARIA JOSE GUTIERREZ ESTRADA
+PASOS LOGIN/SIGNUP ROCKET STORE
+- Crear base de datos (rocketstore)
+- Hacer cambios en el archivo de configuracion del proyecto .env (DB_DATABASE=rocketstore) 
+- Hacer migración -> php artisan migrate
+- Inicializar app -> php artisan serve
+- ingresar a ruta inicial http://127.0.0.1:8000 
+- ingresar al botón de signup o a la ruta http://127.0.0.1:8000/signup
+- ingresar los datos anteriormente registrados (automáticamente se le llevará a la pestaña de login) http://127.0.0.1:8000/login
+- si la operación fue exitosa se le llevara a la pantalla de inicio http://127.0.0.1:8000 
+- luego se pueden ver los perfiles en la barra en el botón de profiles http://127.0.0.1:8000/profiles 
+- luego se pueden ver los detalles de la cuenta en http://127.0.0.1:8000/profiles/1 <-{Con el id}
+- luego para borrar se puede dar clic en el botón de eliminar cuenta
