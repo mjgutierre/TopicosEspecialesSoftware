@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');}); MODIFICAMOS ESTE BLOQUE*/
+Auth::routes();
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index'); //RUTA INICIAL
 Route::get('/about', function () {
@@ -28,6 +27,7 @@ Route::get('/about', function () {
         ->with('description', $description)
         ->with('author', $author);
 })->name('home.about');
+
 // Products
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('product.index');
 Route::get('/products/create', 'App\Http\Controllers\ProductController@create')->name('product.create');
@@ -44,3 +44,6 @@ Route::post('/image/save', 'App\Http\Controllers\ImageController@save')->name("i
 // Not Dependencies
 Route::get('/image-not-di', 'App\Http\Controllers\ImageNotDIController@index')->name("imagenotdi.index");
 Route::post('/image-not-di/save', 'App\Http\Controllers\ImageNotDIController@save')->name("imagenotdi.save");
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
