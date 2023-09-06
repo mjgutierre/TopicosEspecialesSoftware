@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
-Route::get('/create', 'App\Http\Controllers\AnimalController@create')->name('animal.create');
-Route::post('/createPost', 'App\Http\Controllers\AnimalController@createPost')->name('animal.createPost');
-Route::get('/list', 'App\Http\Controllers\AnimalController@list')->name('animal.list');
-Route::post('/{id}/delete', 'App\Http\Controllers\AnimalController@delete')->name('animal.delete');
+Route::get('/crear', 'App\Http\Controllers\AnimalController@create')->name('animal.create');
+Route::post('/crearPost', 'App\Http\Controllers\AnimalController@createPost')->name('animal.createPost');
+Route::get('/listar', 'App\Http\Controllers\AnimalController@list')->name('animal.list');
+Route::get('/estadisticas', 'App\Http\Controllers\AnimalController@statistics')->name('animal.statistics');

@@ -16,7 +16,7 @@ class AnimalController extends Controller
 
     public function createPost(Request $request): RedirectResponse
     {
-        Animal::create($request->only(['name', 'age']));
+        Animal::create($request->only(['name', 'age', 'type', 'review']));
 
         return redirect(route('animal.list'))->with('success');
     }
@@ -24,18 +24,27 @@ class AnimalController extends Controller
     public function list(): View
     {
         $viewData = [];
-        $viewData['title'] = 'Animals - Online Store';
+        $viewData['title'] = 'Animals - Online';
         $viewData['subtitle'] = 'List of animals';
-        $viewData['animals'] = Animal::all();
+        $viewData['animals'] = Animal::orderBy('review')->get(); // Ordena por puntaje ascendente
 
         return view('animal.list')->with('viewData', $viewData);
     }
 
-    public function delete(string $id, Request $request): RedirectResponse
+    public function statistics(): View
     {
-        $animal = Animal::findOrFail($id);
-        $animal->delete();
+        $viewData = [];
+        $viewData['title'] = 'Animals - Online';
+        $viewData['subtitle'] = 'List of statistics';
+        $animals = Animal::all();
 
-        return back();
+        $animalCount = $animals->groupBy('type')->map->count(); //tipo
+        $promedioReview = $animals->avg('review'); //promedio
+
+        $viewData['animals'] = $animals;
+        $viewData['animalCount'] = $animalCount;
+        $viewData['promedioReview'] = $promedioReview;
+
+        return view('animal.statistics')->with('viewData', $viewData);
     }
 }

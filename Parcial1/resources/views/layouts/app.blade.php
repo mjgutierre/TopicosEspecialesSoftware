@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
-    <title>@yield('title', 'Online Animal Store')</title>
+    <title>@yield('title', 'Online Animal Register')</title>
 </head>
 
 <body>
@@ -19,9 +19,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto  ml-auto">
-                    <a class="nav-link active" href="{{ route('home.index') }}">Inicio</a>
                     <a class="nav-link active" href="{{ route('animal.create') }}">Crear</a>
                     <a class="nav-link active" href="{{ route('animal.list') }}">Listar</a>
+                    <a class="nav-link active" href="{{ route('animal.statistics') }}">Estadisticas</a>
                 </div>
             </div>
         </div>

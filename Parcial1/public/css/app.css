@@ -64,18 +64,6 @@ nav {
     padding: 10px;
 }
 
-/* Estilos para el botón "Delete" */
-.delete-button {
-    background-color: #f44336; /* Color de fondo rojo */
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.delete-button:hover {
-    background-color: #d32f2f; /* Cambio de color al pasar el cursor sobre el botón */
-}
 
 .custom-title {
     text-align: center;
@@ -95,6 +83,15 @@ nav {
     top:5px;
 }
 
+.custom-text-avrg {
+    text-align: center;
+    font-weight: bold;
+    color: #273663;
+    position: relative; 
+    z-index: 1;
+    top:5px;
+}
+
 
 /* animal */
 body,
@@ -106,7 +103,7 @@ html {
 }
 
 .user_card_login{
-    height: 330px;
+    height: 430px;
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;

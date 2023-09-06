@@ -43,13 +43,25 @@
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="name" class="form-control input_user" value="" placeholder="name">
+                            <input type="text" name="name" class="form-control input_user" value="" placeholder="nombre" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="int" name="age" class="form-control input_user" value="" placeholder="age">
+                            <input type="int" name="age" class="form-control input_user" value="" placeholder="edad">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="string" name="type" class="form-control input_user" value="" placeholder="gato/perro" required minlength="4" maxlengt ="5">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="int" name="review" class="form-control input_user" value="" placeholder="puntaje de 1 a 5" required>
                         </div>
                         <div class="d-flex justify-content-center mt-3 login_container">
                             <button type="submit" name="button" class="btn login_btn">Crear</input>
