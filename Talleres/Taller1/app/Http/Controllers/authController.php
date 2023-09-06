@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Contracts\Session\Session;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
-use PhpParser\Node\Stmt\Return_;
 
 class authController extends Controller
 {
@@ -32,7 +31,6 @@ class authController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // return redirect()->intended(route('home.index'));
             return redirect(route('home.index'))->with("success", "Login Success, now you can access the app");
         }
         return redirect(route('user.login'))->with("error", "Login unsuccessful");
@@ -59,8 +57,6 @@ class authController extends Controller
 
     public function logout()
     {
-        // Session::flush();
-        // Auth::logout();
         return redirect(route('user.login'));
     }
 
@@ -78,7 +74,7 @@ class authController extends Controller
         return view('user.profileindex', ['user' => $user]);
     }
 
-    public function delete(string $id, Request $request)
+    public function delete(string $id, Request $request):RedirectResponse
         {
             $user = User::findOrFail($id);        
             $user->delete();
